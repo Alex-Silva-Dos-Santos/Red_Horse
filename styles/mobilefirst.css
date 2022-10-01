@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    width: 100%;
+    width: 100vw;
     height: 200px;
     color: white;
     background: black url("../imagens/avatars-000044515224-8ufzmg-t240x240-removebg-preview.png") no-repeat;
@@ -28,11 +28,14 @@ button {
 }
 
 header > button#cart{
+    margin: 0px;
     display: block;
-    margin: -5vh 70vw;
     width: 100px;
     background-color: green;
     border-radius: 5px;
+    position: relative;
+    top: -10%;
+    right: -70%;
 }
 
 menu {
