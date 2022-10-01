@@ -17,42 +17,23 @@ header {
 
 }
 
-header > img{
-    position: relative;
+
+button {
+    color: white;
+    background-color: transparent;
+    margin: 1px;
+    border: none;
+}
+
+header > button#cart{
     display: block;
-    margin-left: 27vw;
-    margin-top: -30vh;
-
-    top: 50%;
-}
-
-
-.ico, .material-icons {
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.ico:hover, header > span#menu_ico:hover{
-    background-color: gray;
-    color: black;
-}
-
-header > div#cart{
-    position: relative;
-    width: 60px;
-    display: inline-block;
-    cursor: pointer;
-    
-    bottom: -10px;
-    left: 75%;
-}
-
-header > span#menu_ico{
-    padding: 3%;
+    margin: -5vh 85vw;
 }
 
 menu {
+    background-color: red;
     width: 130px;
+    height: 23vh;
     display: none;
 }
 
