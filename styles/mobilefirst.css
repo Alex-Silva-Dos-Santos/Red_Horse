@@ -1,0 +1,90 @@
+@charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 200px;
+    color: white;
+    background: black url("../imagens/avatars-000044515224-8ufzmg-t240x240-removebg-preview.png") no-repeat;
+    background-position: center center;
+
+}
+
+header > img{
+    position: relative;
+    display: block;
+    margin-left: 27vw;
+    margin-top: -30vh;
+
+    top: 50%;
+}
+
+
+.ico, .material-icons {
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ico:hover, header > span#menu_ico:hover{
+    background-color: gray;
+    color: black;
+}
+
+header > div#cart{
+    position: relative;
+    width: 60px;
+    display: inline-block;
+    cursor: pointer;
+    
+    bottom: -10px;
+    left: 75%;
+}
+
+header > span#menu_ico{
+    padding: 3%;
+}
+
+menu {
+    width: 130px;
+    display: none;
+}
+
+main {
+    background-color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+main > section {
+    display: block;
+    background-color: white;
+    text-align: center;
+    width: 70%;
+
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 5px;
+   
+}
+
+main > section > img{
+    width: 30vw;
+}
+
+.button {
+    width: 200px;
+    background-color: green;
+    color: white;
+}
+.price {
+    color: green;
+}
