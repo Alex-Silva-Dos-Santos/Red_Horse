@@ -9,6 +9,7 @@ body {
 }
 
 header {
+    width: 100%;
     height: 200px;
     color: white;
     background: black url("../imagens/avatars-000044515224-8ufzmg-t240x240-removebg-preview.png") no-repeat;
