@@ -8,25 +8,26 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="styles/mobilefirst.css" >
+    <script src="scripts/script.js"></script>
 </head>
-<body onload="alert()">
+<body onload="alert('Escrito com JavaScript, HTML5 e CSS3')">
     <header>
         
-        <button id="menu_ico"><span class="material-icons"
+        <button id="show_menu"><span class="material-icons"
             onclick="click_Menu()"> menu</span></button>
         <section>
             <button id="cart"><p><span class="material-icons" >
             shopping_cart</span>Carrinho</p></button>
-    </section>
+        </section>
         
-        <menu id="menu">
-                <button>
+        <menu id="menu" class="closed">
+                <button class="menu_button">
                     <span class="material-icons">account_circle</span>Login
                 </button>
-                <button>
+                <button class="menu_button">
                     <span class="material-icons">call</span>contato
                 </button>
-                <button>
+                <button class="menu_button">
                     <span class="material-icons">info</span>Quem somos
                 </button>
         </menu>    
@@ -52,19 +53,5 @@
         <p>Site criado por <a href="">Alex</a> sem fims lucrativos. Todos os direitos reservados
            a 101 DO BRASIL INDUSTRIA DE BEBIDAS LTDA e a marca Red Horse Energy Drink</p>
     </footer>
-    <script>
-        function click_Menu(){
-            if(menu.style.display == 'block'){
-                menu.style.animation = 'menu_animation_retroced 1.5s normal'
-                menu.style.display = 'none'
-            }else{
-                menu.style.animation = 'menu_animation 1.5s normal'
-                menu.style.display = 'block'
-            }
-        }
-        function alert(){
-            window.alert('Site criado com HTML CSS e JavaScript')
-        }
-    </script>
 </body>
 </html>

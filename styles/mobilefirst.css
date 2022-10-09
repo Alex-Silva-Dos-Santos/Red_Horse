@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
 header {
@@ -21,12 +22,13 @@ header section{
 
 }
 
-button {
+.menu_button {
     color: white;
     background-color: transparent;
     margin: 1px;
     border: none;
     cursor: pointer;
+    margin: 5px;
 }
 
 
@@ -37,17 +39,27 @@ header > section > button#cart{
     padding: 7px;
 }
 
+button#show_menu{
+    background-color: black;
+    color: white;
+}
+
 menu {
     background-color: red;
+    padding: 29px 0px;
+    margin-top: -25px;
     width: 130px;
-    margin-top: -56px;
-    padding-top: 50px;
-    padding-bottom: 63px;
-    display: none;
     box-shadow: 0px 0px 10px rgb(255, 208, 0);
     border: 1px solid yellow;
     border-radius: 5px;
-    animation: none;
+    transition: transform 0.3s ease-in;
+    transform: translateX(-103%);
+
+    display: block;
+}
+
+menu.open {
+    transform: translateX(0%);
 }
 
 main {
@@ -79,6 +91,7 @@ main > section > img{
 
 
 .main_button {
+    color: white;
     background-color: green;
     padding: 10px 25px;
     margin: 10px;
@@ -86,9 +99,7 @@ main > section > img{
     box-shadow: 0px 1px 10px black;
     
 }
-.product{
-        
-}
+    
 .price {
     color: green;
 }
@@ -110,27 +121,11 @@ footer > p > a:hover{
     text-decoration: underline;
 }
 
-@keyframes menu_animation {
-    0%{
-        position: relative;
-        top: -150px;
+@keyframes menu_buttons_fade{
+    from {
+        opacity: 0;
     }
-    50%{
-
-    }
-    75%{
-
-    }
-    100%{
-        top: 150px;
-    }
-}
-@keyframes menu_animation_retroced{
-    0%{
-        position: relative;
-        top: 0px;
-    }
-    100%{
-        top: -500px;
+    to {
+        opacity: 1;
     }
 }
