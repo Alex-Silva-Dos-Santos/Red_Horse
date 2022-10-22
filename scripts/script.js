@@ -1,24 +1,39 @@
 var current_item = 0;
-var sl = setInterval(slide, 3000);
-
-
-function slide(){
-
+    
+function init(){
     var items = window.document.getElementsByClassName("product");
     var items_size = items.length;
-    current_item++;
-    if(current_item >= items_size){
-        current_item = 0;
-    }
-    Array.from(items).forEach(element => {
-        element.classList.remove('current'); 
-});
-    Array.from(items)[current_item].scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "start",
-    });  
-    Array.from(items)[current_item].classList.add('current');
+    var controls = document.querySelectorAll(".control");
+    console.log(controls);
+    Array.from(controls).forEach(control => {
+        control.addEventListener('click', () => {
+            const isleft = control.classList.contains("arrow_left");
+            if(isleft){
+                current_item--;
+            }else{
+                current_item++;
+            }
+            if(current_item >= items_size){
+                current_item = 0;
+            }if(current_item < 0){
+                current_item = items_size - 1;
+            }
+            Array.from(items).forEach(element => {
+                element.classList.remove('current'); 
+            });
+            items[current_item].scrollIntoView({
+                nline: "center",
+                behavior: "smooth",
+                block: "nearest"
+            })
+            Array.from(items)[current_item].classList.add('current');
+        });
+    });
+}   
+
+function slide(){ 
+    
+    
 }
 
 function open_Menu(){
