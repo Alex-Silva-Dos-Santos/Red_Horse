@@ -5,17 +5,27 @@
         transition: 0.3s;
     }
 
+    div#new_box{
+   
+        width: 40vw;
+        top: 20%;
+        left: 30%;
+        text-align: center;
+    }
+   
 
     .container {
-
+        overflow-x: auto;
         background-color: white;
 
-        position: relative;
+        position: unset;
         padding: 15px;
-        max-width: 640px;
+        width: 47vw;
         margin: 0 auto;
     }
     
+
+
     .list{
         display: flex;
         flex-flow: row nowrap;
@@ -27,13 +37,14 @@
         overflow-x: auto;
     }
 
-     .arrow_left, .arrow_right{
+     .control{
         display: unset;
         font-size: 20px;
         text-align: center;
         position: absolute;
-        top: 0;
-        left: 0;
+        height: 470px;
+        top: 216px;
+        left: 24.6vw;
         right: auto;
         bottom: 0;
         border: none;
@@ -43,9 +54,10 @@
     }
     .arrow_right{
         left: auto;
-        right: 0;
+        right: 24.7vw;
         background: linear-gradient(to right, transparent 0%, black 150%);
     }
+    
 
     main > div > div > ul {
         display: flex;
@@ -66,10 +78,18 @@
     main > div > div > ul > li > img{
         height: 248px;
     }
+
+    .p{
+        margin: 10px;
+    }
+
     .product{
         opacity: 0.6;
     }
     .current{
+        opacity: 1;
+    }
+    .opacity_off{
         opacity: 1;
     }
 

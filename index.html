@@ -12,6 +12,20 @@
     <script src="scripts/script.js"></script>
 </head>
 <body onload="init()">
+    <div id="login_box" class="closed_login">
+        <div id="new_box">
+        <h1>Login</h1>
+        <button class="login_buttons" onclick="close_login()"><span class="material-icons" >cancel</span></button>
+        <form action="" class="current_form">
+            <input type="text" placeholder="Email ou Usuário">
+            <input type="password" name="pass" id="pass_id" placeholder="Senha">
+            <button class="login_buttons" type="submit">Login</button>
+        </form>
+
+        </div>
+    </div>
+           
+    
     <header>
         
         <button id="show_menu"><span class="material-icons"
@@ -21,10 +35,10 @@
         
         <menu id="menu" class="closed">
                 <button id="close_menu" class="menu_button" onclick="close_Menu()">
-                    <span class="material-icons">close</span>
+                    <span class="material-icons">cancel</span>
                 </button>
 
-                <button class="menu_button">
+                <button class="menu_button" id="login_button" onclick="open_login()">
                     <span class="material-icons">account_circle</span>Login
                 </button>
 
@@ -37,39 +51,40 @@
                 </button>
         </menu>    
     </header>
+    
     <main>
-        <div class="container">
+        <div class="container" id="container">
             <button id="right" class="control arrow_right">
                 ᐅ
             </button>
-            <button class="control arrow_left">
+            <button id="left" class="control arrow_left">
                 ᐊ
             </button>
             <div class="galery-wrapper">
                 <ul id="list" class="list">
                     
-                    <li class="product current">
+                    <li class="p product current">
                     <img src="imagens/redHorse.webp" alt="">
                     <p>Energetico Red Horse Original<br>480 unidades</p>
                     <p class="price">R$7.999,99</p>
                     <button class="main_button">ADCIONAR</button>
                     </li>
 
-                    <li class="product">
+                    <li class="p product">
                     <img src="imagens/RedMacaVerde.jpg" alt="">
                     <p>Red Horse sabor Maçã Verde 480 unidades</p>
                     <p class="price">R$7.999,99</p>
                     <button class="main_button">ADCIONAR</button>
                     </li>
 
-                    <li class="product">
+                    <li class="p product">
                     <img src="imagens/RedFrutasTropicais.jpg" alt="">
                     <p>Red Horse Sabor Frutas Tropicais 480 unidades</p>
                     <p class="price">R$7.999,99</p>
                     <button class="main_button">ADCIONAR</button>
                     </li>
 
-                    <li class="product">
+                    <li class="p product">
                     <img src="imagens/RedCoco&Açai.jpg" alt="">
                     <p>Red Horse Sabor Coco & Açai 480 unidades</p>
                     <p class="price">R$7.999,99</p>

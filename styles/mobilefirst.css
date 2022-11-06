@@ -8,6 +8,64 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
+    
+}
+
+
+div#login_box{
+    
+    background-color: rgba(0, 0, 0, 0.596);
+
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+div#new_box{
+    background-color: rgba(197, 7, 7, 0.775);
+    border: 1px solid gray;
+    position: absolute;
+    width: 80vw;
+    top: 0%;
+    left: 10%;
+    text-align: center;
+}
+
+.closed_login{
+    display: none;
+}
+
+body>div>h1{
+    color: white;
+}
+
+
+
+body>div>form{
+    display: none;
+}
+
+body>div>form>input{
+    margin: 20px;
+    padding: 10px;
+}
+
+.login_buttons{
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+body>div>button{
+    position: absolute;
+    right: 0;
+    margin: 0px;
+    top: 0;
+    width: 20%;
+}
+.current_form{
+    display: unset;
 }
 
 header {
@@ -20,8 +78,12 @@ header {
 button{
     color: white;
 }
+button:hover{
+    cursor: pointer;
+}
 
 .menu_button {
+    
     background-color: transparent;
     margin: 1px;
     border: none;
@@ -41,7 +103,6 @@ header > button#cart{
 }
 
 button#show_menu{
-    position: absolute;
     background-color: black;
 }
 
@@ -79,27 +140,27 @@ main {
 }
 
 
-.arrow_left, .arrow_right{
+.control{
     display: none;
 }
 
 
 
-main > div > div > ul > li {
+.p {
 
     background-color: white;
     text-align: center;
-  
+    width: 70%;
     border: 1px solid black;
     border-radius: 5px;
-    margin: 10px;
+    margin: auto;
     list-style: none;
     transition-delay: 0.5s;
 }
 
 
 main > div > div > ul > li > img{
-    height: 248px;
+    height: 148px;
 }
 
 
