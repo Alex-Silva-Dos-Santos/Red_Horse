@@ -14,12 +14,13 @@
 <body onload="init()">
     <div id="login_box" class="closed_login">
         <div id="new_box">
-        <h1>Login</h1>
-        <button class="login_buttons" onclick="close_login()"><span class="material-icons" >cancel</span></button>
+        <h1 id="h1_log">Login</h1>
+        
         <form action="" class="current_form">
-            <input type="text" placeholder="Email ou Usuário">
-            <input type="password" name="pass" id="pass_id" placeholder="Senha">
+            <input type="text" placeholder="Email ou Usuário"><br>
+            <input type="password" name="pass" id="pass_id" placeholder="Senha"><br>
             <button class="login_buttons" type="submit">Login</button>
+            <button id="close_log" class="login_buttons" onclick="close_login()">Cancelar</button>
         </form>
 
         </div>
@@ -28,8 +29,7 @@
     
     <header>
         
-        <button id="show_menu"><span class="material-icons"
-            onclick="open_Menu()"> menu</span></button>
+        <button id="show_menu" onclick="open_Menu()"><span class="material-icons"> menu</span></button>
         <button id="cart"><p><span class="material-icons" >
         shopping_cart</span>Carrinho</p></button>
         

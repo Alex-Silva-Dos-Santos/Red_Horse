@@ -30,8 +30,8 @@ function update_arrow_pos(){
 
     arrow_posi = (width * 4.7)/1360;
     arrow_posi = Number(arrow_posi.toFixed(1))+20;
-    arrow_left.style.left = arrow_posi+"vw";
-    arrow_right.style.right = arrow_posi+"vw";
+    arrow_left.style.left = arrow_posi+"%";
+    arrow_right.style.right = arrow_posi+"%";
 }
 
 function slide(){ 
@@ -84,9 +84,7 @@ function close_Menu(){
         
 function open_login(){
     close_Menu();
-    Array.from(controls).forEach(element => {
-        element.style.display = 'none';
-    });
+    document
     box.classList.remove('closed_login');
     var container = document.getElementById('container');
     container.style.position= 'unset';  
@@ -99,9 +97,7 @@ function open_login(){
 
 function close_login(){
     box.classList.add('closed_login');
-    Array.from(controls).forEach(element => {
-        element.style.display = 'unset';
-    });
+    
     Array.from(items).forEach(element => {
         element.classList.add('product');
     });

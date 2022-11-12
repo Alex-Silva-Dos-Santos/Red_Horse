@@ -14,19 +14,21 @@ body {
 
 div#login_box{
     
-    background-color: rgba(0, 0, 0, 0.596);
+    background-color: rgba(0, 0, 0, 0.901);
 
     width: 100vw;
     height: 100vh;
     position: fixed;
 }
 
+
+
 div#new_box{
     background-color: rgba(197, 7, 7, 0.775);
     border: 1px solid gray;
     position: absolute;
     width: 80vw;
-    top: 0%;
+    top: 10%;
     left: 10%;
     text-align: center;
 }
@@ -56,6 +58,9 @@ body>div>form>input{
     padding: 10px;
     border-radius: 4px;
 }
+
+
+
 
 body>div>button{
     position: absolute;
@@ -103,6 +108,7 @@ header > button#cart{
 }
 
 button#show_menu{
+    position: absolute;
     background-color: black;
 }
 

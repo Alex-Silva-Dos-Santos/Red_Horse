@@ -5,6 +5,15 @@
         transition: 0.3s;
     }
 
+    body{
+        background-image: linear-gradient(rgb(41, 41, 41), black);
+    }
+
+    header{
+        background: url(../imagens/avatars-000044515224-8ufzmg-t240x240-removebg-preview.png) no-repeat;
+        background-position: center;
+    }
+
     div#new_box{
    
         width: 40vw;
@@ -20,7 +29,7 @@
 
         position: unset;
         padding: 15px;
-        width: 47vw;
+        width: 47%;
         margin: 0 auto;
     }
     
@@ -44,7 +53,7 @@
         position: absolute;
         height: 470px;
         top: 216px;
-        left: 24.6vw;
+        left: 24.6%;
         right: auto;
         bottom: 0;
         border: none;
@@ -54,10 +63,13 @@
     }
     .arrow_right{
         left: auto;
-        right: 24.7vw;
+        right: 24.7%;
         background: linear-gradient(to right, transparent 0%, black 150%);
     }
-    
+
+    main{
+        background-image: linear-gradient( red, rgb(121, 0, 0));
+    }
 
     main > div > div > ul {
         display: flex;
