@@ -11,27 +11,11 @@
     <link rel="stylesheet" href="styles/desktop.css" >
     <script src="scripts/script.js"></script>
 </head>
-<body onload="init()">
-    <div id="login_box" class="closed_login">
-        <div id="new_box">
-        <h1 id="h1_log">Login</h1>
-        
-        <form action="" class="current_form">
-            <input type="text" placeholder="Email ou Usuário"><br>
-            <input type="password" name="pass" id="pass_id" placeholder="Senha"><br>
-            <button class="login_buttons" type="submit">Login</button>
-            <button id="close_log" class="login_buttons" onclick="close_login()">Cancelar</button>
-        </form>
-
-        </div>
-    </div>
-           
-    
+<body>              
     <header>
         
         <button id="show_menu" onclick="open_Menu()"><span class="material-icons"> menu</span></button>
-        <button id="cart"><p><span class="material-icons" >
-        shopping_cart</span>Carrinho</p></button>
+        <button id="cart"><p><span class="material-icons" >shopping_cart</span>Carrinho</p><p id="products_amount">0</p></button>
         
         <menu id="menu" class="closed">
                 <button id="close_menu" class="menu_button" onclick="close_Menu()">
@@ -39,15 +23,15 @@
                 </button>
 
                 <button class="menu_button" id="login_button" onclick="open_login()">
-                    <span class="material-icons">account_circle</span>Login
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank"><span class="material-icons">account_circle</span>Login</a>
                 </button>
 
                 <button class="menu_button">
-                    <span class="material-icons">call</span>contato
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" rel="external"> <span class="material-icons">call</span>contato</a>
                 </button>
 
                 <button class="menu_button">
-                    <span class="material-icons">info</span>Quem somos
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" rel="external"><span class="material-icons">info</span>Quem somos</a>
                 </button>
         </menu>    
     </header>
@@ -62,38 +46,13 @@
             </button>
             <div class="galery-wrapper">
                 <ul id="list" class="list">
-                    
-                    <li class="p product current">
-                    <img src="imagens/redHorse.webp" alt="">
-                    <p>Energetico Red Horse Original<br>480 unidades</p>
-                    <p class="price">R$7.999,99</p>
-                    <button class="main_button">ADCIONAR</button>
-                    </li>
-
-                    <li class="p product">
-                    <img src="imagens/RedMacaVerde.jpg" alt="">
-                    <p>Red Horse sabor Maçã Verde 480 unidades</p>
-                    <p class="price">R$7.999,99</p>
-                    <button class="main_button">ADCIONAR</button>
-                    </li>
-
-                    <li class="p product">
-                    <img src="imagens/RedFrutasTropicais.jpg" alt="">
-                    <p>Red Horse Sabor Frutas Tropicais 480 unidades</p>
-                    <p class="price">R$7.999,99</p>
-                    <button class="main_button">ADCIONAR</button>
-                    </li>
-
-                    <li class="p product">
-                    <img src="imagens/RedCoco&Açai.jpg" alt="">
-                    <p>Red Horse Sabor Coco & Açai 480 unidades</p>
-                    <p class="price">R$7.999,99</p>
-                    <button class="main_button">ADCIONAR</button>
-                    </li>
+                   
                 </ul>
             </div>
         </div>
-        
+        <ul id="product_list">
+
+        </ul>
     </main>
     <footer>
         <p>Site criado por <a href="">Alex</a> sem fims lucrativos. Todos os direitos reservados

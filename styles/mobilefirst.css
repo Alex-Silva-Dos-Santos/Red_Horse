@@ -14,61 +14,17 @@ body {
 
 div#login_box{
     
-    background-color: rgba(0, 0, 0, 0.901);
-
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-}
-
-
-
-div#new_box{
     background-color: rgba(197, 7, 7, 0.775);
     border: 1px solid gray;
     position: absolute;
-    width: 80vw;
+    width:40vw;
     top: 10%;
     left: 10%;
     text-align: center;
-}
-
-.closed_login{
-    display: none;
-}
-
-body>div>h1{
-    color: white;
+    border-radius: 5px;
 }
 
 
-
-body>div>form{
-    display: none;
-}
-
-body>div>form>input{
-    margin: 20px;
-    padding: 10px;
-}
-
-.login_buttons{
-    background-color: red;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-
-
-
-body>div>button{
-    position: absolute;
-    right: 0;
-    margin: 0px;
-    top: 0;
-    width: 20%;
-}
 .current_form{
     display: unset;
 }
@@ -96,9 +52,15 @@ button:hover{
     margin: 5px;
 }
 
+.menu_button > a{
+    color: white;
+    text-decoration: none;
+}
 
 
 header > button#cart{
+    min-width: 75px;
+    max-width: 150px;
     position: fixed;
     top: 0;
     right: 0;
@@ -170,13 +132,14 @@ main > div > div > ul > li > img{
 }
 
 
-.main_button {
+.add_product_button {
     color: white;
     background-color: green;
     padding: 10px 25px;
     margin: 10px;
     border-radius: 5px;
     box-shadow: 0px 1px 10px black;
+    font-weight: bolder;
     
 }
     
