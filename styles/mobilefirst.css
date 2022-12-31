@@ -11,22 +11,45 @@ body {
     
 }
 
-
-div#login_box{
-    
-    background-color: rgba(197, 7, 7, 0.775);
-    border: 1px solid gray;
-    position: absolute;
-    width:40vw;
-    top: 10%;
-    left: 10%;
-    text-align: center;
-    border-radius: 5px;
+button{
+    color: white;
 }
 
 
-.current_form{
-    display: unset;
+button:hover{
+    cursor: pointer;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+footer > p > a{
+    color: blue;
+    text-decoration: none;
+}
+
+footer > p > a:hover{
+    background-color: lightgrey;
+    color: black;
+    text-decoration: underline;
+}
+
+menu {
+    background-color: red;
+    padding: 29px 0px;
+    width: 130px;
+    height: 140px;
+    box-shadow: 0px 0px 10px rgb(255, 208, 0);
+    border: 1px solid yellow;
+    border-radius: 5px;
+    transform: translateX(-103%);
+
+    display: block;
 }
 
 header {
@@ -36,12 +59,17 @@ header {
     
 }
 
-button{
-    color: white;
+.prod_img{
+    height: 148px;
 }
-button:hover{
-    cursor: pointer;
+
+.current_form{
+    display: unset;
 }
+
+
+
+
 
 .menu_button {
     
@@ -58,40 +86,13 @@ button:hover{
 }
 
 
-header > button#cart{
-    min-width: 75px;
-    max-width: 150px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: green;
-    border-radius: 5px;
-    padding: 7px;
-}
 
-button#show_menu{
-    position: absolute;
-    background-color: black;
-}
 
-menu {
-    background-color: red;
-    padding: 29px 0px;
-    width: 130px;
-    height: 140px;
-    box-shadow: 0px 0px 10px rgb(255, 208, 0);
-    border: 1px solid yellow;
-    border-radius: 5px;
-    transform: translateX(-103%);
 
-    display: block;
-}
 
-button#close_menu{
-    position: absolute;
-    background-color: red;
-    right: 0;
-}
+
+
+
 
 .open {
     transform: translateX(-2%);
@@ -126,12 +127,6 @@ main {
     transition-delay: 0.5s;
 }
 
-
-main > div > div > ul > li > img{
-    height: 148px;
-}
-
-
 .add_product_button {
     color: white;
     background-color: green;
@@ -147,20 +142,61 @@ main > div > div > ul > li > img{
     color: green;
 }
 
-footer {
-    background-color: black;
-    color: white;
+
+
+.others_products{
+    width: 70%;
+    background-color: white;
+    margin: 4px;
+    display: inline-block;
     text-align: center;
-    padding: 10px;
-    border-radius: 5px 5px 0px 0px;
+    border: 1px solid black;
 }
-footer > p > a{
-    color: blue;
-    text-decoration: none;
+
+
+button#cart{
+    min-width: 75px;
+    max-width: 150px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: green;
+    border-radius: 5px;
+    padding: 7px;
 }
-footer > p > a:hover{
-    background-color: lightgrey;
-    color: black;
-    text-decoration: underline;
+
+button#close_menu{
+    position: absolute;
+    background-color: red;
+    right: 0;
 }
+
+button#show_menu{
+    position: absolute;
+    background-color: black;
+}
+
+div#manage_prod_window{
+    text-align: center;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 15%;
+    right: 15%;
+    width: 70%;
+    border: 1px solid black;
+}
+
+
+div#login_box{   
+    background-color: rgba(197, 7, 7, 0.775);
+    border: 1px solid gray;
+    position: absolute;
+    width:40vw;
+    top: 10%;
+    left: 10%;
+    text-align: center;
+    border-radius: 5px;
+}
+
 

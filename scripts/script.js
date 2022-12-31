@@ -9,27 +9,22 @@ var products = [
     {"flavor": "Original", "product_img": "imagens/redHorse.webp", "price":"7.999,99"}
 ]
 var others_products = [
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
-    {"type": "ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00"},
+    {"type": "Ice", "flavor": "Limão Siliciano", "product_img": "imagens/Kisla ice.jpg", "price":"000.000,00", "id": "111"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "222"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "333"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "444"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "555"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "666"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "777"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "888"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "999"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "123"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "324"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "545"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "247"},
 ]
 
+var cart = [];
 
 //Definir valores das variaveis e chamar funções automaticas:
 
@@ -44,12 +39,14 @@ function init(){
     login_box = document.getElementById('login_box');
     arrow_left = document.getElementById("left");
     arrow_right = document.getElementById("right");
-    
+    var buttons = document.getElementsByClassName("add_product_button");
+
     slide();       
 }
 
  //Create product list
  function addProductsToList(){
+    //#####################Slide#################################
     for( c = 0; c < products.length; c++){
         //tags creation
         let price_paragraph = document.createElement("p");
@@ -77,25 +74,90 @@ function init(){
         }
         list_item.classList.add("p");
         list_item.classList.add("product");
+        product_img.classList.add("prod_img");
         price_paragraph.classList.add("price")
-        add_button.classList.add("add_product_button");
-        
-
-
+        add_button.classList.add("add_product_button");       
     }
+    //##############################################################
     for(c = 0; c < others_products.length; c++){
+        let prod_descrip = document.createElement("p");
         let price = document.createElement("p");
         let button = document.createElement("button");
-        let img = document.createElement("img");
+        let product_img = document.createElement("img");
         let list = document.getElementById("product_list");
         let list_item = document.createElement("li");
 
         price.innerHTML = others_products[c]["price"];
         button.innerHTML = "ADCIONAR";
-        img.setAttributte("src", others_products[c][product_img]);
+        product_img.setAttribute("src", others_products[c]["product_img"]);
+        prod_descrip.innerHTML = `${others_products[c]["type"]} ${others_products[c]["flavor"]} 275ml 960 unidades`;
+        
+        list_item.appendChild(product_img);
+        list_item.appendChild(prod_descrip);
+        list_item.appendChild(price);
+        list_item.appendChild(button);
+        list.appendChild(list_item);
 
+        button.setAttribute("id", `${others_products[c]["id"]}`);
+        button.classList.add("add_product_button");
+        product_img.classList.add("prod_img");
+
+        button.addEventListener("click", function(){
+            document.getElementById("manage_prod_window").style.display = "unset";
+            constructProdWindow(button);
+        })
+
+        list_item.classList.add("others_products");
+        price.classList.add("price");                
     }
+    
+
  }  
+
+ function constructProdWindow(object){
+
+    let manage_prod_window = document.getElementById("manage_prod_window");
+    let product_container = document.querySelector("#prod_container");
+    let confirm_button = document.querySelector("#confirm_button");
+    let cancel_button = document.querySelector("#cancel_button");  
+    let buttons_container = document.querySelector("#buttons_container");
+    let prod_img = document.querySelector("#prod_img");
+    let description = document.querySelector("#description");
+    let price = document.querySelector("#price");
+    let range_form = document.querySelector("#prod_amount");
+    let amount_value = document.querySelector("#amount_value");
+
+    for(var c = 0; c < others_products.length; c++){
+        if(others_products[c]["id"] == object.id.toString()){
+
+            prod_img.setAttribute("src", others_products[c]["product_img"]);
+            description.innerHTML = others_products[c]["type"] + others_products[c]["flavor"] + "275ml 960 unidades";
+            price.innerHTML = others_products[c]["price"];                        
+        }
+    }
+    
+  
+    
+    product_container.setAttribute("id", "product_info_container")
+
+    updateAmount(amount_value, range_form)
+    document.addEventListener("input", function(){     
+        updateAmount(amount_value, range_form);
+    })
+
+    buttons_container.style.display = "flex";
+    
+
+    cancel_button.addEventListener("click", function(){
+        document.getElementById("manage_prod_window").style.display = "none";
+    })
+
+
+}
+
+function updateAmount(object, range){
+    object.innerHTML = range.value;
+}
 
 
 //Atualizar posição dos botões do slide de acordo com o tamanho da tela:
@@ -179,14 +241,10 @@ function close_login(){
     Array.from(items).forEach(element => {
         element.classList.add('product');
     });
-    
-   
-    
+      
 }
 
-function addProduct(){
-    let amount_txt = document.getElementById("products_amount");
-    products_amount = Number(amount_txt)+1;
-    products_amount.toString();
-    amount_txt.innerHTML = `${products_amount}`;
+function destructWindow(window){
+    document.parentNode.removeChild(window);
 }
+
