@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 @media (min-width: 500px){
-
+    *{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
     body{
         background-image: linear-gradient(rgb(41, 41, 41), black);
     }
@@ -11,7 +13,9 @@
         background-position: center;
     }
 
-    
+    h1 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
    
 
     .container {
@@ -30,6 +34,7 @@
         display: flex;
         flex-flow: row nowrap;
         gap: 15px;
+        
     }
 
     .galery-wrapper {
@@ -62,6 +67,8 @@
     }
     main{
         background-image: linear-gradient( red, rgb(121, 0, 0));
+        transition-duration: 1s;
+        transition-delay: 0.7s;
     }
 
     main > div > div > ul {
@@ -150,10 +157,13 @@
         list-style: none;
     }
     div#manage_prod_window{
+        display: block;
         border: 5px solid gray;
         width: 20%;
         top: 15%;
-        right: 0%;
+        right: -30%;
+        transition-duration: 2s;
+        
 
     }
 

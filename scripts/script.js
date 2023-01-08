@@ -3,13 +3,13 @@ var current_item = 0;
 var items, items_size, controls, login_button, login_box, arrow_posi, arrow_left, arrow_right,
 width, products_amount;
 var products = [
-    {"flavor": "Maçã Verde", "product_img": "imagens/RedMacaVerde.jpg", "price":"7.999,99"},
-    {"flavor": "Frutas Tropicais", "product_img": "imagens/RedFrutasTropicais.jpg", "price":"7.999,99"},
-    {"flavor": "Coco&Açai", "product_img": "imagens/RedCoco&Açai.jpg", "price":"7.999,99"},
-    {"flavor": "Original", "product_img": "imagens/redHorse.webp", "price":"7.999,99"}
+    {"flavor": "Maçã Verde", "product_img": "imagens/RedMacaVerde.jpg", "price":"7.999,99", "id":"324"},
+    {"flavor": "Frutas Tropicais", "product_img": "imagens/RedFrutasTropicais.jpg", "price":"7.999,99", "id":"543"},
+    {"flavor": "Coco&Açai", "product_img": "imagens/RedCoco&Açai.jpg", "price":"7.999,99", "id":"049"},
+    {"flavor": "Original", "product_img": "imagens/redHorse.webp", "price":"7.999,99", "id": "390"}
 ]
 var others_products = [
-    {"type": "Ice", "flavor": "Limão Siliciano", "product_img": "imagens/Kisla ice.jpg", "price":"000.000,00", "id": "111"},
+    {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "111"},
     {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "222"},
     {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "333"},
     {"type": "Ice", "flavor": "Red Fruits", "product_img": "imagens/Ice.png", "price":"000.000,00", "id": "444"},
@@ -76,7 +76,12 @@ function init(){
         list_item.classList.add("product");
         product_img.classList.add("prod_img");
         price_paragraph.classList.add("price")
-        add_button.classList.add("add_product_button");       
+        add_button.classList.add("add_product_button");
+        add_button.setAttribute("id", `${products[c]["id"]}`);
+        add_button.addEventListener("click", function(){
+            document.getElementById("manage_prod_window").style.display = "unset";
+            constructProdWindow(add_button, products);
+        })       
     }
     //##############################################################
     for(c = 0; c < others_products.length; c++){
@@ -104,7 +109,7 @@ function init(){
 
         button.addEventListener("click", function(){
             document.getElementById("manage_prod_window").style.display = "unset";
-            constructProdWindow(button);
+            constructProdWindow(button, others_products);
         })
 
         list_item.classList.add("others_products");
@@ -114,7 +119,7 @@ function init(){
 
  }  
 
- function constructProdWindow(object){
+ function constructProdWindow(object, list){
 
     let manage_prod_window = document.getElementById("manage_prod_window");
     let product_container = document.querySelector("#prod_container");
@@ -127,12 +132,12 @@ function init(){
     let range_form = document.querySelector("#prod_amount");
     let amount_value = document.querySelector("#amount_value");
 
-    for(var c = 0; c < others_products.length; c++){
-        if(others_products[c]["id"] == object.id.toString()){
+    for(var c = 0; c < list.length; c++){
+        if(list[c]["id"] == object.id.toString()){
 
-            prod_img.setAttribute("src", others_products[c]["product_img"]);
-            description.innerHTML = others_products[c]["type"] + others_products[c]["flavor"] + "275ml 960 unidades";
-            price.innerHTML = others_products[c]["price"];                        
+            prod_img.setAttribute("src", list[c]["product_img"]);
+            description.innerHTML = list[c]["type"] + list[c]["flavor"] + "275ml 960 unidades";
+            price.innerHTML = list[c]["price"];                        
         }
     }
     
@@ -152,6 +157,7 @@ function init(){
         document.getElementById("manage_prod_window").style.display = "none";
     })
 
+    manage_prod_window.style.right = "0%"
 
 }
 

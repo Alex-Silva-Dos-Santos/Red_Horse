@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     
 }
 
@@ -185,6 +185,7 @@ div#manage_prod_window{
     right: 15%;
     width: 70%;
     border: 1px solid black;
+    transition-duration: 2s;
 }
 
 
